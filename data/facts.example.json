@@ -1,0 +1,10 @@
+{
+  "demo": true,
+  "fixture": {
+    "home": "Galatasaray",
+    "away": "Example United",
+    "competition": "SYNTHETIC DEMO"
+  },
+  "prediction": null,
+  "weather": null
+}

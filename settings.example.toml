@@ -1,0 +1,26 @@
+provider = "calendar"
+
+[football]
+team_name = "Galatasaray"
+
+[calendar]
+# Public subscription URL exposed by https://fixtur.es/en/team/galatasaray
+url = "https://ics.fixtur.es/v2/galatasaray.ics"
+
+[display]
+timezone = "Europe/Dublin"
+
+[refresh]
+# Feed advertises a six-hour refresh interval. No API key needed.
+seconds = 300
+cache_seconds = 21600
+cache_directory = "data/cache/calendar"
+
+[standings]
+cache_seconds = 3600
+unlabelled_leagues = ["tur.1"]
+
+[standings.competitions]
+CL = "uefa.champions"
+
+"tur.1" = "tur.1"

@@ -1,0 +1,5 @@
+* text=auto
+*.png binary
+*.ttf binary
+*.stl binary
+*.3mf binary

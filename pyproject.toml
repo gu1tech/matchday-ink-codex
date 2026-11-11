@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "matchday-ink"
+version = "0.1.0"
+description = "A four-colour e-paper matchday companion for Galatasaray supporters"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.11"
+dependencies = ["Pillow>=11,<13", "certifi>=2024", "python-dotenv>=1,<2", "icalendar>=6,<8", "beautifulsoup4>=4.12,<5"]
+
+[project.optional-dependencies]
+device = ["pyserial>=3.5,<4"]
+cad = ["manifold3d>=3,<4", "trimesh>=4,<5"]
+ai = ["openai>=2,<3", "pydantic>=2,<3"]
+dev = ["pytest>=8,<10", "ruff>=0.9,<1"]
+
+[project.scripts]
+matchday-ink = "matchday.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F", "I", "UP"]
+
+[tool.setuptools.package-data]
+matchday = ["assets/fonts/*.ttf", "assets/fonts/OFL.txt", "assets/status-icons.json", "assets/*.png", "assets/*.svg"]
